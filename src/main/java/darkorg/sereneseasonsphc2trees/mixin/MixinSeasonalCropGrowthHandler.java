@@ -1,9 +1,9 @@
 package darkorg.sereneseasonsphc2trees.mixin;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.world.SaplingGrowTreeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -17,12 +17,12 @@ import sereneseasons.init.ModTags;
 @Mixin(SeasonalCropGrowthHandler.class)
 public abstract class MixinSeasonalCropGrowthHandler {
     @Shadow
-    protected abstract boolean isGlassAboveBlock(World pLevel, BlockPos pPos);
+    protected abstract boolean isGlassAboveBlock(Level pLevel, BlockPos pPos);
 
     @SubscribeEvent
     public void onSaplingGrowTree(SaplingGrowTreeEvent event) {
         BlockPos pos = event.getPos();
-        World level = (World) event.getWorld();
+        Level level = (Level) event.getWorld();
         BlockState state = level.getBlockState(pos);
         Block block = state.getBlock();
 
@@ -36,7 +36,7 @@ public abstract class MixinSeasonalCropGrowthHandler {
                 event.setResult(Event.Result.DENY);
             }
             if (FertilityConfig.outOfSeasonCropBehavior.get() == 2) {
-                if (!state.is(ModTags.Blocks.unbreakable_infertile_crops)) {
+                if (!state.is(ModTags.Blocks.UNBREAKABLE_INFERTILE_CROPS)) {
                     event.setResult(Event.Result.DENY);
                     event.getWorld().destroyBlock(pos, false);
                 } else {

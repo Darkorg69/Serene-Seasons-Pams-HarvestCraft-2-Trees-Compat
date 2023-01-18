@@ -1,10 +1,10 @@
 package darkorg.sereneseasonsphc2trees.mixin;
 
 import com.pam.pamhc2trees.blocks.BlockPamFruit;
-import net.minecraft.block.BlockState;
-import net.minecraft.state.IntegerProperty;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.server.ServerWorld;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.common.ForgeHooks;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,20 +21,23 @@ public abstract class MixinBlockPamFruit {
     @Final
     public static IntegerProperty AGE;
 
-    @Inject(at = @At(value = "HEAD"), method = "tick", cancellable = true)
-    protected void tick(BlockState pBlockState, ServerWorld pServerLevel, BlockPos pPos, Random pRandom, CallbackInfo ci) {
-        if (!pServerLevel.isAreaLoaded(pPos, 1)) {
+    @Inject(at = @At(value = "HEAD"), method = "randomTick", cancellable = true)
+    protected void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, Random pRandom, CallbackInfo ci) {
+        if (!pLevel.isAreaLoaded(pPos, 1)) {
             return;
         }
 
-        if (!pBlockState.canSurvive(pServerLevel, pPos)) {
-            pServerLevel.destroyBlock(pPos, true);
+        if (!pState.canSurvive(pLevel, pPos)) {
+            pLevel.destroyBlock(pPos, true);
         }
 
-        int i = pBlockState.getValue(AGE);
-        if (ForgeHooks.onCropsGrowPre(pServerLevel, pPos, pBlockState, i < 7 && pRandom.nextInt(5) == 0 && pServerLevel.getRawBrightness(pPos.above(), 0) >= 9)) {
-            pServerLevel.setBlock(pPos, pBlockState.setValue(AGE, i + 1), 2);
-            ForgeHooks.onCropsGrowPost(pServerLevel, pPos, pBlockState);
+        if (pLevel.getRawBrightness(pPos, 0) >= 9) {
+            int i = pState.getValue(AGE);
+
+            if (ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, i < 7 && pRandom.nextInt(5) == 0)) {
+                pLevel.setBlock(pPos, pState.setValue(AGE, i + 1), 2);
+                ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
+            }
         }
         ci.cancel();
     }
