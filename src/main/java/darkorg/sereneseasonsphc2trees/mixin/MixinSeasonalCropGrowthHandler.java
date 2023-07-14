@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import sereneseasons.config.FertilityConfig;
 import sereneseasons.handler.season.SeasonalCropGrowthHandler;
 import sereneseasons.init.ModFertility;
@@ -19,6 +20,7 @@ public abstract class MixinSeasonalCropGrowthHandler {
     @Shadow
     protected abstract boolean isGlassAboveBlock(Level pLevel, BlockPos pPos);
 
+    @Unique
     @SubscribeEvent
     public void onSaplingGrowTree(SaplingGrowTreeEvent event) {
         BlockPos pos = event.getPos();

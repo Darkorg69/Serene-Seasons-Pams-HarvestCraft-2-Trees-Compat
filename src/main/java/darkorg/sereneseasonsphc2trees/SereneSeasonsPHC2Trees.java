@@ -7,8 +7,4 @@ import net.minecraftforge.fml.common.Mod;
 
 public class SereneSeasonsPHC2Trees {
     public static final String MOD_ID = "sereneseasonsphc2trees";
-
-    public SereneSeasonsPHC2Trees() {
-        MinecraftForge.EVENT_BUS.register(this);
-    }
 }
