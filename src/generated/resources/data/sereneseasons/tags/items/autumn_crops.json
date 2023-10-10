@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "pamhc2trees:almonditem",
+    "pamhc2trees:candlenutitem",
+    "pamhc2trees:chestnutitem",
+    "pamhc2trees:dateitem",
+    "pamhc2trees:figitem",
+    "pamhc2trees:hazelnutitem",
+    "pamhc2trees:jackfruititem",
+    "pamhc2trees:oliveitem",
+    "pamhc2trees:pecanitem",
+    "pamhc2trees:persimmonitem",
+    "pamhc2trees:pinenutitem",
+    "pamhc2trees:pomegranateitem",
+    "pamhc2trees:rambutanitem",
+    "pamhc2trees:soursopitem",
+    "pamhc2trees:starfruititem",
+    "pamhc2trees:walnutitem",
+    "pamhc2trees:bananaitem",
+    "pamhc2trees:cinnamonitem",
+    "pamhc2trees:coconutitem",
+    "pamhc2trees:maplesyrupitem",
+    "pamhc2trees:papayaitem"
+  ]
+}
