@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "pamhc2trees:cashewitem",
+    "pamhc2trees:dateitem",
+    "pamhc2trees:lemonitem",
+    "pamhc2trees:orangeitem",
+    "pamhc2trees:persimmonitem",
+    "pamhc2trees:pomegranateitem",
+    "pamhc2trees:vanillabeanitem",
+    "pamhc2trees:bananaitem",
+    "pamhc2trees:cinnamonitem",
+    "pamhc2trees:coconutitem",
+    "pamhc2trees:eucalyptusitem",
+    "pamhc2trees:latexitem",
+    "pamhc2trees:maplesyrupitem",
+    "pamhc2trees:papayaitem"
+  ]
+}

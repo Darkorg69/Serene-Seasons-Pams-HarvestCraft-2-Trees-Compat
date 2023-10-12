@@ -1,6 +1,5 @@
 package darkorg.sereneseasonsphc2trees;
 
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod(SereneSeasonsPHC2Trees.MOD_ID)
