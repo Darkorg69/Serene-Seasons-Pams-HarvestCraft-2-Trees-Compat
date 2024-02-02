@@ -1,5 +1,4 @@
 {
-  "replace": false,
   "values": [
     "pamhc2trees:pamcashew",
     "pamhc2trees:pamdate",
@@ -19,19 +18,15 @@
     "pamhc2trees:pamcinnamon",
     "pamhc2trees:pamcoconut",
     "pamhc2trees:pammaple",
-    "pamhc2trees:pameucalyptus",
     "pamhc2trees:pampapaya",
     "pamhc2trees:pampaperbark",
-    "pamhc2trees:pamrubber",
     "pamhc2trees:pamspiderweb",
     "pamhc2trees:banana_sapling",
     "pamhc2trees:cinnamon_sapling",
     "pamhc2trees:coconut_sapling",
-    "pamhc2trees:eucalyptus_sapling",
     "pamhc2trees:maple_sapling",
     "pamhc2trees:papaya_sapling",
     "pamhc2trees:paperbark_sapling",
-    "pamhc2trees:rubber_sapling",
     "pamhc2trees:spiderweb_sapling"
   ]
 }

@@ -1,5 +1,4 @@
 {
-  "replace": false,
   "values": [
     "pamhc2trees:acornitem",
     "minecraft:apple",
@@ -17,7 +16,6 @@
     "pamhc2trees:limeitem",
     "pamhc2trees:lycheeitem",
     "pamhc2trees:mangoitem",
-    "pamhc2trees:mesquiteitem",
     "pamhc2trees:nutmegitem",
     "pamhc2trees:passionfruititem",
     "pamhc2trees:pawpawitem",
@@ -32,8 +30,6 @@
     "pamhc2trees:bananaitem",
     "pamhc2trees:cinnamonitem",
     "pamhc2trees:coconutitem",
-    "pamhc2trees:eucalyptusitem",
-    "pamhc2trees:latexitem",
     "pamhc2trees:maplesyrupitem",
     "pamhc2trees:papayaitem"
   ]

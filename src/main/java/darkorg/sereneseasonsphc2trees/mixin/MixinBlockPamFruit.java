@@ -3,6 +3,7 @@ package darkorg.sereneseasonsphc2trees.mixin;
 import com.pam.pamhc2trees.blocks.BlockPamFruit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.common.ForgeHooks;
@@ -13,8 +14,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.Random;
-
 @Mixin(BlockPamFruit.class)
 public abstract class MixinBlockPamFruit {
     @Shadow
@@ -22,7 +21,7 @@ public abstract class MixinBlockPamFruit {
     public static IntegerProperty AGE;
 
     @Inject(at = @At(value = "HEAD"), method = "randomTick", cancellable = true)
-    protected void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, Random pRandom, CallbackInfo ci) {
+    protected void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom, CallbackInfo pCallbackInfo) {
         if (!pLevel.isAreaLoaded(pPos, 1)) {
             return;
         }
@@ -39,6 +38,6 @@ public abstract class MixinBlockPamFruit {
                 ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
             }
         }
-        ci.cancel();
+        pCallbackInfo.cancel();
     }
 }

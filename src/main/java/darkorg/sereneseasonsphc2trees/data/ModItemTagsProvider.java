@@ -9,7 +9,7 @@ import net.minecraft.world.item.Items;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import sereneseasons.init.ModTags;
 
-import static com.pam.pamhc2trees.init.ItemRegistry.*;
+import static com.pam.pamhc2trees.init.ItemRegistration.*;
 
 public class ModItemTagsProvider extends ItemTagsProvider {
     public ModItemTagsProvider(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, ExistingFileHelper pExistingFileHelper) {
@@ -29,7 +29,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 pecanitem.get(),
                 persimmonitem.get(),
                 pinenutitem.get(),
-                pinyonitem.get(),
+                //pinyonitem.get(),
                 pomegranateitem.get(),
                 rambutanitem.get(),
                 soursopitem.get(),
@@ -40,7 +40,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 grapefruititem.get(),
                 guavaitem.get(),
                 lemonitem.get(),
-                mesquiteitem.get(),
+                //mesquiteitem.get(),
                 orangeitem.get(),
                 tamarinditem.get());
 
@@ -60,7 +60,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 limeitem.get(),
                 lycheeitem.get(),
                 mangoitem.get(),
-                mesquiteitem.get(),
+                //mesquiteitem.get(),
                 nutmegitem.get(),
                 passionfruititem.get(),
                 pawpawitem.get(),
@@ -84,8 +84,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         yearRound(bananaitem.get(),
                 cinnamonitem.get(),
                 coconutitem.get(),
-                eucalyptusitem.get(),
-                latexitem.get(),
+                //eucalyptusitem.get(),
+                //latexitem.get(),
                 maplesyrupitem.get(),
                 papayaitem.get());
     }

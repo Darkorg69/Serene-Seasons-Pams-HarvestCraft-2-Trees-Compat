@@ -5,9 +5,9 @@ import darkorg.sereneseasonsphc2trees.data.ModBlockTagsProvider;
 import darkorg.sereneseasonsphc2trees.data.ModItemTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
 @Mod.EventBusSubscriber(modid = SereneSeasonsPHC2Trees.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEvents {
@@ -19,7 +19,7 @@ public class ModEvents {
         ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(generator, existingFileHelper);
         ModItemTagsProvider itemTagsProvider = new ModItemTagsProvider(generator, blockTagsProvider, existingFileHelper);
 
-        generator.addProvider(blockTagsProvider);
-        generator.addProvider(itemTagsProvider);
+        generator.addProvider(event.includeServer(), blockTagsProvider);
+        generator.addProvider(event.includeServer(), itemTagsProvider);
     }
 }

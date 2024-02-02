@@ -1,5 +1,4 @@
 {
-  "replace": false,
   "values": [
     "pamhc2trees:pamacorn",
     "pamhc2trees:pamapple",
@@ -17,7 +16,6 @@
     "pamhc2trees:pamlime",
     "pamhc2trees:pamlychee",
     "pamhc2trees:pammango",
-    "pamhc2trees:pammesquite",
     "pamhc2trees:pamnutmeg",
     "pamhc2trees:pampassionfruit",
     "pamhc2trees:pampawpaw",
@@ -45,7 +43,6 @@
     "pamhc2trees:lime_sapling",
     "pamhc2trees:lychee_sapling",
     "pamhc2trees:mango_sapling",
-    "pamhc2trees:mesquite_sapling",
     "pamhc2trees:nutmeg_sapling",
     "pamhc2trees:passionfruit_sapling",
     "pamhc2trees:pawpaw_sapling",
@@ -61,19 +58,15 @@
     "pamhc2trees:pamcinnamon",
     "pamhc2trees:pamcoconut",
     "pamhc2trees:pammaple",
-    "pamhc2trees:pameucalyptus",
     "pamhc2trees:pampapaya",
     "pamhc2trees:pampaperbark",
-    "pamhc2trees:pamrubber",
     "pamhc2trees:pamspiderweb",
     "pamhc2trees:banana_sapling",
     "pamhc2trees:cinnamon_sapling",
     "pamhc2trees:coconut_sapling",
-    "pamhc2trees:eucalyptus_sapling",
     "pamhc2trees:maple_sapling",
     "pamhc2trees:papaya_sapling",
     "pamhc2trees:paperbark_sapling",
-    "pamhc2trees:rubber_sapling",
     "pamhc2trees:spiderweb_sapling"
   ]
 }

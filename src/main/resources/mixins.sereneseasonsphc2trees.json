@@ -4,8 +4,7 @@
   "package": "darkorg.sereneseasonsphc2trees.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "MixinBlockPamFruit",
-    "MixinSeasonalCropGrowthHandler"
+    "MixinBlockPamFruit"
   ],
   "injectors": {
     "defaultRequire": 1
