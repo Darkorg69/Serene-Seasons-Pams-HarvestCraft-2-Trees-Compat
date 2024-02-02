@@ -1,23 +1,27 @@
 package darkorg.sereneseasonsphc2trees.data;
 
 import darkorg.sereneseasonsphc2trees.SereneSeasonsPHC2Trees;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 import sereneseasons.init.ModTags;
+
+import java.util.concurrent.CompletableFuture;
 
 import static com.pam.pamhc2trees.init.ItemRegistration.*;
 
 public class ModItemTagsProvider extends ItemTagsProvider {
-    public ModItemTagsProvider(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, ExistingFileHelper pExistingFileHelper) {
-        super(pGenerator, pBlockTagsProvider, SereneSeasonsPHC2Trees.MOD_ID, pExistingFileHelper);
+    public ModItemTagsProvider(PackOutput pPackOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, CompletableFuture<TagLookup<Block>> pBlockTagsLookupProvider, ExistingFileHelper pExistingFileHelper) {
+        super(pPackOutput, pLookupProvider, pBlockTagsLookupProvider, SereneSeasonsPHC2Trees.MOD_ID, pExistingFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(@NotNull HolderLookup.Provider pProvider) {
         autumn(almonditem.get(),
                 candlenutitem.get(),
                 chestnutitem.get(),

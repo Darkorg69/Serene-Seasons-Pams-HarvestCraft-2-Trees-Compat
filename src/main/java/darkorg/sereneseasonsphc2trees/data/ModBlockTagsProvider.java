@@ -1,23 +1,25 @@
 package darkorg.sereneseasonsphc2trees.data;
 
 import darkorg.sereneseasonsphc2trees.SereneSeasonsPHC2Trees;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 import sereneseasons.init.ModTags;
 
-import javax.annotation.Nullable;
+import java.util.concurrent.CompletableFuture;
 
 import static com.pam.pamhc2trees.init.BlockRegistration.*;
 
 public class ModBlockTagsProvider extends BlockTagsProvider {
-    public ModBlockTagsProvider(DataGenerator pGenerator, @Nullable ExistingFileHelper pExistingFileHelper) {
-        super(pGenerator, SereneSeasonsPHC2Trees.MOD_ID, pExistingFileHelper);
+    public ModBlockTagsProvider(PackOutput pPackOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, ExistingFileHelper pExistingFileHelper) {
+        super(pPackOutput, pLookupProvider, SereneSeasonsPHC2Trees.MOD_ID, pExistingFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(@NotNull HolderLookup.Provider pProvider) {
         autumn(pamalmond.get(),
                 pamcandlenut.get(),
                 pamchestnut.get(),
