@@ -13,11 +13,11 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
-import sereneseasons.config.FertilityConfig;
+import sereneseasons.init.ModConfig;
 import sereneseasons.init.ModFertility;
 import sereneseasons.init.ModTags;
 
-@Mod.EventBusSubscriber(modid = SereneSeasonsPHC2Trees.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.DEDICATED_SERVER)
+@Mod.EventBusSubscriber(modid = SereneSeasonsPHC2Trees.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.DEDICATED_SERVER)
 public class ForgeServerEvents {
     @SubscribeEvent
     public static void onSaplingGrowTreeEvent(SaplingGrowTreeEvent event) {
@@ -29,14 +29,14 @@ public class ForgeServerEvents {
         ResourceLocation key = ForgeRegistries.BLOCKS.getKey(block);
         boolean isFertile = ModFertility.isCropFertile(key != null ? key.toString() : null, level, pos);
 
-        if (FertilityConfig.seasonalCrops.get() && !isFertile && !isGlassAboveBlock(level, pos)) {
-            if ((FertilityConfig.outOfSeasonCropBehavior.get() == 0) && (level.getRandom().nextInt(6) != 0)) {
+        if (ModConfig.fertility.seasonalCrops && !isFertile && !isGlassAboveBlock(level, pos)) {
+            if ((ModConfig.fertility.outOfSeasonCropBehavior == 0) && (level.getRandom().nextInt(6) != 0)) {
                 event.setResult(Event.Result.DENY);
             }
-            if (FertilityConfig.outOfSeasonCropBehavior.get() == 1) {
+            if (ModConfig.fertility.outOfSeasonCropBehavior == 1) {
                 event.setResult(Event.Result.DENY);
             }
-            if (FertilityConfig.outOfSeasonCropBehavior.get() == 2) {
+            if (ModConfig.fertility.outOfSeasonCropBehavior == 2) {
                 if (!state.is(ModTags.Blocks.UNBREAKABLE_INFERTILE_CROPS)) {
                     event.setResult(Event.Result.DENY);
                     event.getLevel().destroyBlock(pos, false);

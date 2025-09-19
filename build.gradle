@@ -93,6 +93,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:sereneseasons-291874:${sereneseasons_version}")
     implementation fg.deobf("curse.maven:pamhc2trees-365460:${pamhc2trees_version}")
+    implementation fg.deobf("curse.maven:glitchcore-955399:${glitchcore_version}")
 }
 
 mixin {
